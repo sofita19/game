@@ -47,10 +47,10 @@ export class Game
 		this.targetGame = new Target(this);
 
 		this.canvas.addEventListener("click", (event) => {
-            this.player.mouseX = event.offsetX;
-            this.player.mouseY = event.offsetY;
+		    this.player.mouseX = event.offsetX;
+		    this.player.mouseY = event.offsetY;
 
-            this.player.clickOnTarget();
+		    this.player.clickOnTarget();
         });
 	}
 
@@ -60,12 +60,12 @@ export class Game
 	* @param {Event} event
 	*/
 	handleButtonClick( event )
-   {
+   	{
 	   const t = event.target;
 
 	   if ( !( t instanceof HTMLButtonElement ) )
 	   {
-			return;
+		return;
 	   }
 
 	   let file = "url('img/backgr"+ (Math.floor(Math.random() * (5)) + 1) +".png')";
