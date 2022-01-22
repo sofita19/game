@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Game "Hit the target"</title>
+</head>
+<body>
+    <main class="content">
+        <h1>Hit the target</h1>
+        <div class="restartButton">
+            <button type="button" data-action="restart">Restart</button>
+        </div>
+        <br/>
+        <div class="startPage">
+            <h2>Rules of the game</h2>
+            <p>The target moves in different directions. Your task is to earn points by hitting the target.</p>
+            <p>Yellow color gives you 5 points. Red color gives you 3 points. Blue color gives you 2 points. Black color gives you 1 point.</p>
+            <p>For every 25 points you move to the next level.</p>
+            <p>If you miss the target, you lose one life. You will only have 3 lives.</p>
+            <p>Good luck!</p>
+            <button type="button" data-action="start">Start</button>
+        </div>
+       <canvas id="cvs" width="800" height="500"></canvas>
+       <div class="info">
+            <p>Scores: <span class="scores"></span></p>
+            <p>Level: <span class="level"></span></p>
+            <p>Lives: <span class="lives"></span></p>
+       </div>
+    </main>
+    <script type="module" src="scripts/index.js"></script>
+</body>
+</html>
