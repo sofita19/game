@@ -29,12 +29,7 @@ export class Player
         document.querySelector('.lives').textContent = this.#lives;
         document.querySelector('.level').textContent = this.level; 
 
-	    this.game.canvas.addEventListener("click", (event) => {
-            this.mouseX = event.offsetX;
-            this.mouseY = event.offsetY;
-
-            this.clickOnTarget();
-        });
+	    
     }
 
     addScores(s)
@@ -61,14 +56,20 @@ export class Player
 
     nextLevel()
     {
-        this.level++;
-        document.querySelector('.level').textContent = this.level;
+        if(this.level < 5)
+        {
+            this.level++;
+            document.querySelector('.level').textContent = this.level;
+
+            let file = "url('img/backgr"+ (Math.floor(Math.random() * (5)) + 1) +".png')";
+            this.game.canvas.style.backgroundImage = file;
+        }
     }
     
     gameOver(reason)
     {
         window.cancelAnimationFrame(this.game.targetGame.drawFrame);
-        document.removeEventListener("click", this.clickOnTarget);
+        document.removeEventListener("click", this.clickOnTarget, false);
         
         this.game.context.fillStyle = 'black';
         this.game.context.globalAlpha = 0.9;
@@ -109,6 +110,4 @@ export class Player
         if (pixels[0] === 0 && pixels[1] === 0 && pixels[2] === 0 && pixels[3] === 0) // if not on target
             this.deleteLife();
     }
-
-    
 }

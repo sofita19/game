@@ -41,6 +41,19 @@ export class Game
 		}
 	}
 
+	createNewElements()
+	{
+		this.player = new Player(this);
+		this.targetGame = new Target(this);
+
+		this.canvas.addEventListener("click", (event) => {
+            this.player.mouseX = event.offsetX;
+            this.player.mouseY = event.offsetY;
+
+            this.player.clickOnTarget();
+        });
+	}
+
 	/* Обработчик нажатия на кнопки
 	* 
 	* @private
@@ -54,10 +67,9 @@ export class Game
 	   {
 			return;
 	   }
-	   
-	   this.player = new Player(this);
-	   this.targetGame = new Target(this);
-		
+
+	   let file = "url('img/backgr"+ (Math.floor(Math.random() * (5)) + 1) +".png')";
+
 	   const action = t.dataset.action|| '';
 	   switch(action){
 		   case "start":
@@ -66,14 +78,16 @@ export class Game
 				this.canvas.style.visibility = "visible";
 				document.querySelector('.info').style.visibility = "visible";
 
-				this.canvas.style.backgroundImage = "url('img/backgr.png')";
+				this.canvas.style.backgroundImage = file;
 				document.querySelector('.restartButton').style.visibility = "visible";
 
 				this.player.setPlayer();
 				this.targetGame.setTarget();
+
 				break;
 
 			case "restart":
+				this.canvas.style.backgroundImage = file;
 				this.player.setPlayer();
 				this.targetGame.setTarget();
 				break;

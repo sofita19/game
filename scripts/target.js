@@ -9,7 +9,7 @@ export class Target
     /** @type {Game} */
     game;
 
-    #goal = 25;
+    #goal;
 
     x; // Начальное положение x
     y; // Начальное полежение y
@@ -52,6 +52,8 @@ export class Target
             this.game.player.nextLevel();
             this.dw -= 10;
             this.dh -= 10;
+            this.dx *= 1.2;
+            this.dy *= 1.2;
         }
 
         if(this.game.player.level <= 5)
@@ -91,10 +93,11 @@ export class Target
     
     setTarget()
     {
+        this.#goal = 25;
         this.x = 0;
         this.y = 0;
-        this.dx = 2;
-        this.dy = -2;
+        this.dx = 3;
+        this.dy = -3;
         this.dw = 150;
         this.dh = 150;
         
