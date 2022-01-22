@@ -13,7 +13,7 @@ function main()
 	}
 
 	const buttons = document.querySelectorAll( 'button' );
-    const game = new Game(canvas, buttons);
+    	const game = new Game(canvas, buttons);
 	game.createNewElements();
 }
 
