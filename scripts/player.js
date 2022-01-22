@@ -90,7 +90,7 @@ export class Player
 
     clickOnTarget()
     {
-        let ImgData = this.game.context.getImageData(this.mouseX, this.mouseY , 2, 2);
+        let ImgData = this.game.context.getImageData(this.mouseX, this.mouseY, 2, 2);
         let pixels = ImgData.data;
 
         if (pixels[0] > 240 && pixels[1] > 230 && pixels[2] < 30 && pixels[3] === 255) // if yellow
