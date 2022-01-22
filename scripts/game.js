@@ -51,7 +51,7 @@ export class Game
 		    this.player.mouseY = event.offsetY;
 
 		    this.player.clickOnTarget();
-        });
+        	});
 	}
 
 	/* Обработчик нажатия на кнопки
