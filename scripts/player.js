@@ -28,8 +28,6 @@ export class Player
         document.querySelector('.scores').textContent = this.scores;
         document.querySelector('.lives').textContent = this.#lives;
         document.querySelector('.level').textContent = this.level; 
-
-	    
     }
 
     addScores(s)
