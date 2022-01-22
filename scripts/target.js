@@ -31,7 +31,7 @@ export class Target
     {
         this.game.context.clearRect(0, 0, this.game.canvas.width, this.game.canvas.height);
 
-        this.game.context.drawImage(pic, this.x,this.y, this.dw, this.dh);
+        this.game.context.drawImage(pic, this.x, this.y, this.dw, this.dh);
 
         if(this.x + this.dx > this.game.canvas.width - pic.width || this.x + this.dx < 0) 
         {
@@ -58,7 +58,7 @@ export class Target
 
         if(this.game.player.level <= 5)
         {
-            this.drawFrame = window.requestAnimationFrame( () => this.drawLevels());
+            this.drawFrame = window.requestAnimationFrame( () => this.drawLevels() );
         }
         else
         {
