@@ -4,7 +4,7 @@ function main()
 {
     const canvas = document.getElementById( 'cvs' );
 	
-	if (
+	if(
 		!canvas
 		|| !( canvas instanceof HTMLCanvasElement )
 	)
